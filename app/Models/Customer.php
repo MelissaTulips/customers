@@ -23,6 +23,12 @@ class Customer extends Model
         'points'
     ];
 
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+
     public function isGoldenMember(){
         return $this->points > 2000;
 
